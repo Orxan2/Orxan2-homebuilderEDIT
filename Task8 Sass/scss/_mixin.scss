@@ -1,0 +1,33 @@
+@mixin circle($length,$color) {
+    width: $length;
+    height: $length;
+    background-color: $color;
+    border-radius: 50%;   
+}
+
+@mixin pos_location($location-top,$location-left,$tr-locationX,$tr-locationY){
+    position: absolute;
+    top:$location-top;
+    left: $location-left;
+    transform: translate($tr-locationX,$tr-locationY);
+}
+
+@mixin ShowText() {
+    z-index: 3;
+    position: relative;
+}
+
+@mixin BackImageAndOverlay{
+        background-color: #0000007a;
+        background-blend-mode: color-burn;
+        background-position: center;
+        background-size: cover;
+    
+}
+@mixin CollsBackImage($length){
+    height: $length;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+  
+}

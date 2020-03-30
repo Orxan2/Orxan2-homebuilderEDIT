@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+html,body,div,ul,section{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box!important;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none !important;
+    transition: all 0.4s;
+}
+ul,ol{
+    list-style: none;
+}
+li{
+    float: left!important;
+     
+}
+[class^="flaticon-"]:before{
+    margin-left: 0;
+}
+[class^="form-control"]:focus{
+    box-shadow: none!important;
+    border: 1px solid #ced4da!important;
+   
+ }

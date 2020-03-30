@@ -1,0 +1,695 @@
+@import 'reset';
+@import 'mixin';
+@import 'colors';
+
+header {
+
+    .social-icons{
+      & > ul{
+        & > li{
+            & > a{
+                & > .social-round {
+                    @include circle(40px, transparent);
+            
+                    &>i {
+                        @include pos_location(50%, 50%, -50%, -50%);
+                    }
+                }
+
+                }
+            & > a:hover{
+                & > .social-round {
+                   background-color:$expert2-color;
+                   color: #fff!important;
+                  
+                }
+            }
+        }
+    }
+}
+
+nav.bg-nav{
+    background-color: #000;
+        
+  ul.navbar-nav{
+
+    & > li{
+       font-size: 15px;
+       }
+    & > li::before{
+        @include pos_location(50%,50%,-50%,-50%);
+       content:' ';
+       width:0;
+       height:100%;
+       position:absolute;
+       background-color:$expert2-color;
+       transition: linear all 0.2s;
+       }
+    
+    & > li.active{
+        background-color:$expert2-color;
+        
+        & > a{
+            color: #000!important;
+           & > span{
+              @include ShowText();
+            }
+        }
+   
+}
+    & > li:not(.active):hover:before {
+            width: 102%; // 100% olanda border gorunur :(
+                    
+        }
+     
+        & > li:hover>a{
+            @include ShowText();
+            color:#000!important;
+                 }              
+form {
+
+    div.input-group-append {
+
+        input.form-control:focus {
+            box-shadow: none;
+            border-color: #ced4da;
+}
+   
+        .opacity-1 {
+            opacity: 1 !important;
+        }
+
+        .rounded-left-0 {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+ 
+}
+}
+
+
+}
+
+main{
+
+   & > section.home-img{
+        background-image: url(../images/bg_3.jpg);
+        @include BackImageAndOverlay();
+     
+
+       & > .container{
+           & > .row{
+            & > .letter-spacing{
+                letter-spacing: 3px;
+            }
+           }
+       }
+    }
+    section.home-animation{
+        animation-name: home;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+     animation-fill-mode: forwards;
+    }
+    & > section.back-fix{
+      background-attachment: fixed;
+      background-position:top center!important;
+      
+       h3{
+           font-size: 16px;
+           opacity: .6;
+        & > a:hover{
+            color: $expert2-color!important;
+           
+
+        }
+    }
+    }
+    
+    //Section two start
+    & > section{
+     .card{
+
+        & > .icons {
+            @include circle(80px, $expert2-color);
+
+            & > span::before{
+                margin-left: 0;
+                font-size: 52px;
+            }
+
+        }
+        & > .icons::before{
+            content: ' ';
+            @include circle(35px,white);
+            @include pos_location(25%,50%,0,0);
+            opacity: 0.5;
+         }
+       
+         & > .card-body{
+            & > h5.h-fonts{
+                font-size: 23px;
+            }
+            & > p.p-fonts{
+                font-size: 17px;
+                font-weight: 400;
+            }
+         }
+     }
+    }
+    //Section two end
+
+    // section three start
+    & > section{
+        .experts:nth-of-type(1) .card{
+            background-color: lighten($color: $expert1-color, $amount: 45);
+          }
+        .experts:nth-of-type(2) .card{
+            background-color: $expert2-color;
+          }
+        .experts:nth-of-type(3) .card{
+            background-color: $expert3-color;
+          }
+          
+        .icons-2{
+            @include circle (75px,transparent);
+            border: 2px dotted black;
+
+          & > span::before{
+                margin-left: 0;
+                font-size: 75px;
+               @include ShowText();
+            }
+           
+        }
+        .icons-2::before{
+            content: ' ';
+            @include circle(40px,$expert2-color);
+            @include pos_location(65%,50%,-50%,-50%);
+            z-index: 0;
+         }
+         .experts:nth-of-type(2) .icons-2::before{
+           background-color: #fff;
+         }
+         
+         .experts:nth-of-type(3) .icons-2::before{
+            background-color: transparent;
+          }
+    }
+    // section three start
+
+
+    // section four (traktor) start
+    & > section {
+        .tractor-img{
+            background-image: url(../images/about.webp);
+            background-size: cover;
+            background-position: center;
+            height: auto;
+        }
+           p.lh-1_7{
+    line-height: 1.7;
+           }
+      .myplay{
+            @include circle(75px,$expert2-color);
+            cursor: pointer;
+            z-index: 1!important;
+        }
+        .myplay::after{
+            content: ' ';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $expert2-color;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            position: absolute;
+             animation-name: pulse;
+             animation-iteration-count: infinite;
+             animation-duration: 2s;
+          animation-fill-mode: forwards;
+         } 
+       }
+// section four (traktor) end
+
+
+// section five (statistika) start
+    section#statistika{
+        z-index: -1;
+        background-color: lighten($color: $expert1-color, $amount: 45);
+    
+        .col-12{
+            z-index: 1;
+        }
+       .title{
+        .number{
+            font-size: 50px;
+            font-weight: bolder;
+       }
+     }
+    .text{
+        .font-edit{
+            font-weight: 900;
+            font-size: 18px;
+        }
+    }
+       
+    }
+    section#statistika::after{
+        content: ' ';
+        position: absolute;
+        width: 50%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $expert2-color;
+        z-index: 0;
+                
+             }
+// section five (statistika) end
+
+
+// section six start
+       & > section {
+        .my-image{
+            height:420px;
+            background-position-x: center;
+            background-size: cover;
+
+        & > div.overlay{
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #00043cb5;
+                background-blend-mode: color-burn;
+                visibility: hidden;
+  
+                & > div.full-screen{
+                    @include circle(80px,$expert2-color);
+                    cursor: zoom-in;
+                    
+                    & > span::before{
+                        margin-left: 0;
+                        // font-size: 52px;
+                    }
+    
+                }
+
+
+            }
+            & > div.text-white{
+               @include ShowText();
+            }
+        }
+        .my-image:hover{
+          
+        & > div.overlay{
+              
+                visibility: visible;
+  
+            }
+            & > div.text-white{
+               @include ShowText();
+            }
+        }
+        .my-image:nth-of-type(1){
+            background-image: url(../images/work-1.jpg);
+
+        }
+        .my-image:nth-of-type(2){
+            background-image: url(../images/work-2.jpg);
+
+        }
+        .my-image:nth-of-type(3){
+            background-image: url(../images/work-3.jpg);
+
+        }
+        .my-image:nth-of-type(4){
+            background-image: url(../images/work-4.jpg);
+
+        }
+        .my-image:nth-of-type(5){
+            background-image: url(../images/work-5.jpg);
+
+        }
+        .my-image:nth-of-type(6){
+            background-image: url(../images/work-6.jpg);
+
+        }
+        .my-image:nth-of-type(7){
+            background-image: url(../images/work-7.jpg);
+
+        }
+        .my-image:nth-of-type(8){
+            background-image: url(../images/work-8.jpg);
+
+        }
+        .my-image:nth-of-type(9){
+            background-image: url(../images/work-9.jpg);
+
+        }
+        
+    }
+// section six end
+
+// section seven start
+    & > section {
+        .card{
+        
+            & > .icon{
+                @include circle(40px,$expert2-color);
+                @include pos_location(0,0,50%,-50%);
+
+
+                & > span{
+                    i::before{
+                         margin-left: 0;
+                         font-size: 16px;
+                    }
+                   
+                }
+            }
+           & >.card-heading{
+            & >.image{
+                overflow: hidden;
+                img{
+                    // display: inline-block;
+                    @include circle(75px,transparent);
+                }
+            }
+            }
+        }
+            }
+// section seven end
+
+
+// section nine start
+& > section {
+    .bg-orange{
+        background-color: $expert2-color!important;
+    }
+  
+       .btn-orange{
+          background-color: darken($color: orange, $amount: 5);
+       }
+       .btn-orange:hover{
+        background-color: darken($color: orange, $amount: 5);
+     }
+      
+ }
+ // section nine end
+
+
+// section about start
+section#about{
+    .line-height{
+      line-height: 1.8;
+    }
+}
+// section about end
+
+
+ // section blog start
+    & > section {
+        .card{
+        & > .blog-image{
+          @include CollsBackImage(250px);
+            }
+          .card-body{
+             & > h6{
+                .f-14{
+                    font-size: 14px;
+                    font-weight: 550;
+                }
+                
+                 & > a:hover{
+                      color:lighten($color: $expert1-color , $amount: 30) !important;
+                  }
+              }
+              & > h5{
+                & > a:hover{
+                     color:$expert2-color!important;
+                 }
+             }
+          }
+        }
+       
+       .blog-1{
+        & > .blog-card:nth-of-type(1) .blog-image{
+            background-image: url(../images/image_1.jpg);
+        }
+        & > .blog-card:nth-of-type(2) .blog-image{
+            background-image: url(../images/image_2.jpg);
+        }
+        & > .blog-card:nth-of-type(3) .blog-image{
+            background-image: url(../images/image_3.jpg);
+        }  
+       }
+       
+       .blog-2{
+        & > .blog-card:nth-of-type(1) .blog-image{
+            background-image: url(../images/image_4.jpg);
+        }
+        & > .blog-card:nth-of-type(2) .blog-image{
+            background-image: url(../images/image_5.jpg);
+        }
+        & > .blog-card:nth-of-type(3) .blog-image{
+            background-image: url(../images/image_6.jpg);
+        } 
+       }
+      
+    }
+// section blog end
+
+
+// section our-team start
+ section{
+    .team-card{ 
+        height: 400px;
+        opacity: 1;
+        background-color: #1af716c9!important;
+        background: linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0.15) 38%,rgba(0,0,0,0.4) 100%);
+
+     
+      .yellow-card{
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+      
+         .team-card-2{
+            bottom: 10px;
+        }
+
+       .image{
+             width: 40px;
+          }
+      }
+    }
+   
+  }
+// section our-team end
+
+
+ // section contact start
+section{
+    & > .container{
+
+        .bg-lightgrey{
+ 
+            background-color: lighten($color: #a5b1c2, $amount: 22);
+        }
+     .back-map{
+        @include BackImageAndOverlay();
+        background-image: url(../images/north-america-map.gif);
+        cursor: -webkit-grab;
+       
+
+       
+   }
+   form{
+     
+    [class^="form-control"]{
+        border: none!important;
+        }
+    [class^="form-control"]:focus{
+        box-shadow: none!important;
+       
+        }
+        [class^="form-control"]::placeholder{
+           font-size: 18px;
+            }
+           
+}  
+       
+       
+
+  & > .row{
+            
+            & > .col-md-3{
+                & > .card{
+                    & > .contact-icon{
+                        & > span{
+                            @include circle(100px,$expert3-color);  
+                        }
+
+                    }
+                    .text-expert{
+                        color: $expert2-color;
+                    }
+               
+       
+    }
+  
+            }
+    }
+     
+ 
+ }
+ }
+ //section contact end 
+ 
+}
+
+footer.myfooter{    
+    font-size:17px;
+    background-color: #252525;
+
+    ul{
+     & > li{
+         & > a{
+           & > span.social-icons2{
+                @include circle(35px,$footerFormBacColor);
+            }
+         }
+         & > a:hover{
+            color: #fff!important;
+          }
+     }
+        
+   }
+    .text-expert{
+       color: $expert2-color!important;
+    }
+    .bg-expert{
+     background-color: $expert2-color!important;
+  }
+
+    [class^="form-control"]::placeholder{
+       color: #c2bfbf;
+      
+    } 
+}
+
+@keyframes pulse {
+    from {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+      
+    }
+    to {
+      transform: scale3d(1.7, 1.7, 1.7);
+      opacity: 0.1;
+    }
+  }
+
+@keyframes home {
+    0% {
+      transform: scale3d(0.9, 0.9, 0.9);
+      opacity: 0;
+    }
+    50% {
+      transform: scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  }
+
+@media only screen and (max-width:768px) {
+
+   section.home-img{
+       h1{
+           font-size: 40px!important;
+       }
+       h3{
+        font-size: 16px!important;
+    }
+   }
+    .tractor-img{
+       height: 400px!important;
+    }
+  
+    #statistika{
+           
+        .col-12{
+          .title{
+              width: 100%;
+          }
+            .text{
+               width: 100%;
+            }
+        }
+       
+      
+       }
+    }
+
+   
+@media only screen and (min-width:768px) {
+   
+      .myplay{
+            transform: translateX(50%);
+      } 
+    .bg-back{
+        background-color: #333!important;
+    }
+    }  
+    
+@media only screen and (max-width:992px) {
+
+        .back-map{
+            width: 100%;
+            height: 300px;
+           
+           
+       }
+    
+    }
+
+@media only screen and (min-width:992px) {
+       
+        nav.bg-nav{
+            background-color: $expert3-color!important;
+        }        
+
+        // team-card start
+        section{
+            .team-card{ 
+                transition: linear all 0.3s!important;
+                opacity: .7!important;
+               
+              .yellow-card{
+                display: none!important;
+                transition: linear all 0.3s!important;
+                               
+                }
+            }
+                     
+           .my-team-card:hover  .team-card{ 
+                transform: rotateY(180deg)!important;
+                .yellow-card{  transform: rotateY(180deg)!important; 
+                  display: block!important;
+                
+                }
+            }
+          
+          }
+ }  
+
+ 
+ 
